@@ -14,10 +14,10 @@ pipeline {
       }
     }
     
-    stage(‘Upload to AWS’) {
+    stage('Upload to AWS') {
         steps {
           
-            s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:’index.html’, bucket:’c3pipelines’)
+            s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'index.html', bucket:'jenkins-s3-nitesh')
          
      }
 
