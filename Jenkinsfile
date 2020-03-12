@@ -13,6 +13,13 @@ pipeline {
         sh 'tidy -q -e *.html'
       }
     }
+    
+    stage(‘Upload to AWS’) {
+        steps {
+          
+            s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:’index.html’, bucket:’c3pipelines’)
+         
+     }
 
   }
 }
